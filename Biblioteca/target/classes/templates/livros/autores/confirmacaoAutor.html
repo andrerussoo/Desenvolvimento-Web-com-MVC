@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmação de Autor</title>
+</head>
+<body>
+<h1>Autor cadastrado!</h1>
+<p>Nome:
+    <span th:text="${autor.nome}"></span>
+</p>
+<p>Nacionalidade:
+    <span th:text="${autor.nacionalidade}"></span>
+</p>
+<a th:href="@{/livros}">Voltar para a lista de livros</a>
+</body>
+</html>

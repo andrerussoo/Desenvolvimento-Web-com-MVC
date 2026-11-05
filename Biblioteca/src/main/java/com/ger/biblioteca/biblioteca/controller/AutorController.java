@@ -10,12 +10,14 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/livros/autores")
 public class AutorController {
 
+    // Exibir formulário de autor
     @GetMapping("/autorFormulario")
     public String exibirFormulario(Model model) {
         model.addAttribute("autor", new Autor());
         return "livros/autores/autorFormulario";
     }
 
+    // Cadastrar autor
     @PostMapping
     public String cadastrarAutor(
             @ModelAttribute("autor") Autor autor) {

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Lista de Livros</title>
+
+</head>
+
+<body>
+
+<h1>Lista de Livros</h1>
+
+<p th:if= "${#lists.isEmpty(livros)}">
+Nenhum livro encontrado.
+
+</p>
+
+<ul>
+    <li th:each="livro, status : ${livros}">
+    <strong> Titulo: </strong>
+    <span th:text="${livro.titulo}"></span>
+
+    <br>
+
+    <strong> Autor: </strong>
+    <span th:text="${livro.autor}"></span>
+
+    <br>
+
+    <strong> ISBN: </strong>
+    <span th:text="${livro.isbn}"></span>
+
+    <br><br>
+
+    <form th:action="@{/livros/excluir/{indice}(indice=${status.index})}"
+          method="post">
+        <button type="submit">Excluir</button>
+
+        </form>
+
+        <br><br>
+
+  </li>
+
+</ul>
+
+<a th:href="@{/livros/formulario}">
+    Adicionar
+
+</a>
+
+<br><br>
+
+<a th:href="@{/livros}">
+    Voltar
+
+</a>
+
+</body>
+
+</html>
